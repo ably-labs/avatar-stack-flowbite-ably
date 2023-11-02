@@ -20,22 +20,28 @@ Ably has a React SDK specifically focused on implementing the communication aspe
 
 To get started, we’ll use Vite to create a React package in JavaScript:
 
+```bash
 npm create vite@latest avatar-stack -- --template react
 cd avatar-stack
+```
 
 1. Install Tailwind
 
 In the new project, let’s install tailwind and the other various packages required for us to make use of Flowbite with npm:
 
+```bash
 npm install -D tailwindcss postcss autoprefixer
+```
 
 Next, let’s instantiate our tailwind.config.js file:
- 
+
+```bash
 npx tailwindcss init -p
+```
 
 Now, configure the template paths inside the tailwind.config.js file. These’ll allow for tailwind to work properly with Flowbite:
 
-```json
+```javascript
 module.exports = {
   content: [
     './src/**/*.{js,jsx,ts,tsx}',
@@ -100,7 +106,9 @@ npm install ably
 
 With everything installed, we can start setting up our Avatar Stack. As we’ll be using Ably for handling the synchronization between clients of who is present, names, and so on, we’ll need to get an API key to authenticate with Ably.
 
-Sign up for an Ably Account for free, and then create an app in your Dashboard. Once you have an App, go to the app’s API keys and copy one. We’ll be using this to generate tokens for our end-users to use.
+[Sign up for an Ably Account for free](https://www.ably.com/signup), and then create an app in your Dashboard. Once you have an App, go to the [app’s API keys](https://www.ably.com/accounts/any/apps/any) and copy one. We’ll be using this to generate tokens for our end-users to use.
+
+![image](https://github.com/ably-labs/avatar-stack-flowbite-ably/assets/9784119/3a976c9f-c95d-4833-a1fa-265e271f4d72)
 
 **Creating a `.env.local` File**
 
@@ -235,6 +243,8 @@ export default AvatarStack;
 ```
 Here we have a very simple page, with a header bar. We’ll be adding our Avatar Stack to the right end of this header bar.
 
+![image](https://github.com/ably-labs/avatar-stack-flowbite-ably/assets/9784119/9b0d3666-ed60-465c-a9da-d9c1c0e1491f)
+
 ### Creating an Avatar
 
 Let’s set up what our Avatars will look like. We’ll have it so that our clients appear as a pair of initials, and that each Avatar has an indicator on it, which’ll be green if they’re active in the room, and red if they’re currently inactive.
@@ -323,6 +333,8 @@ Finally, let’s use these `others` and `self` fields to generate our Avatar Sta
 ```
 
 With that done, our app should be working. Run the project with `npm run dev`, and you should see as you open up more browser tabs, more clients enter the Avatar Stack!
+
+![image](https://github.com/ably-labs/avatar-stack-flowbite-ably/assets/9784119/5b65944d-aa80-4655-8163-19e97b1f267d)
 
 ## Conclusion
 
